@@ -1,0 +1,7 @@
+C:\Users\H153813\Documents\Visual Studio 2010\Projects\UnleashedBlog\UnleashedBlogTests\bin\Debug\UnleashedBlogTests.dll
+C:\Users\H153813\Documents\Visual Studio 2010\Projects\UnleashedBlog\UnleashedBlogTests\bin\Debug\UnleashedBlogTests.pdb
+C:\Users\H153813\Documents\Visual Studio 2010\Projects\UnleashedBlog\UnleashedBlogTests\bin\Debug\UnleashedBlog.dll
+C:\Users\H153813\Documents\Visual Studio 2010\Projects\UnleashedBlog\UnleashedBlogTests\bin\Debug\UnleashedBlog.pdb
+C:\Users\H153813\Documents\Visual Studio 2010\Projects\UnleashedBlog\UnleashedBlogTests\obj\Debug\UnleashedBlog.Tests.csprojResolveAssemblyReference.cache
+C:\Users\H153813\Documents\Visual Studio 2010\Projects\UnleashedBlog\UnleashedBlogTests\obj\Debug\UnleashedBlogTests.dll
+C:\Users\H153813\Documents\Visual Studio 2010\Projects\UnleashedBlog\UnleashedBlogTests\obj\Debug\UnleashedBlogTests.pdb
