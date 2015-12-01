@@ -85,6 +85,8 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\EntityFrameworkBlogRepository.cs" />
+    <Compile Include="Paging\PagedList.cs" />
+    <Compile Include="Paging\PageLinqExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

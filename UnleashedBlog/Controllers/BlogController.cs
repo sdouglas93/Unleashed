@@ -19,11 +19,10 @@ namespace UnleashedBlog.Controllers
             _blogService = new BlogService(this.ModelState, blogRepository);
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(_blogService.ListBlogEntries());
+            return View(_blogService.ListBlogEntries(page));
         }
-
 
         public ActionResult Create()
         {
@@ -31,7 +30,7 @@ namespace UnleashedBlog.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create([Bind(Exclude = "Id")]BlogEntry blogEntryToCreate)
+        public ActionResult Create([Bind(Exclude = "id")]BlogEntry blogEntryToCreate)
         {
             if (_blogService.CreateBlogEntry(blogEntryToCreate) == false)
                 return View();

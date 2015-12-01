@@ -1,18 +1,17 @@
-﻿//using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-//using System.Text;
+using Paging;
+using UnleashedBlog.Paging;
 
 namespace UnleashedBlog.Models
 {
     public abstract class BlogRepositoryBase
     {
-        //Blog Entry Methods
-        public abstract List<BlogEntry> ListBlogEntries();
+        // Blog Entry Methods
         public abstract void CreateBlogEntry(BlogEntry blogEntryToCreate);
         protected abstract IQueryable<BlogEntry> QueryBlogEntries();
 
-        public virtual List<BlogEntry> ListBlogEntries(int? year, int? month, int?day, string name)
+        public virtual PagedList<BlogEntry> ListBlogEntries(int? page, int? year, int? month, int? day, string name)
         {
             var query = this.QueryBlogEntries();
             if (year.HasValue)
@@ -23,7 +22,9 @@ namespace UnleashedBlog.Models
                 query = query.Where(e => e.DatePublished.Day == day.Value);
             if (!string.IsNullOrEmpty(name))
                 query = query.Where(e => e.Name == name);
-            return query.ToList();
+            
+            return query.OrderByDescending(e => e.DatePublished).ToPagedList(page, 2);
         }
+
     }
 }

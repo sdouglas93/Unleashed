@@ -5,6 +5,7 @@ using System.Web;
 using UnleashedBlog.Models.EntityFramework;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using UnleashedBlog.Paging;
 
 namespace UnleashedBlog.Models
 {
@@ -18,13 +19,15 @@ namespace UnleashedBlog.Models
         public BlogService(ModelStateDictionary modelState, BlogRepositoryBase blogRepository)
             : base(modelState, blogRepository) { }
 
-        public override IEnumerable<BlogEntry> ListBlogEntries()
+        public override PagedList<BlogEntry> ListBlogEntries(int? page)
         {
-            return _blogRepository.ListBlogEntries();
+            return _blogRepository.ListBlogEntries(page, null, null, null, null);
         }
-        public override IEnumerable<BlogEntry> ListBlogEntries(int? year, int?month, int? day, string name)
+
+
+        public override PagedList<BlogEntry> ListBlogEntries(int? page, int? year, int? month, int? day, string name)
         {
-            return _blogRepository.ListBlogEntries(year, month, day, name);
+            return _blogRepository.ListBlogEntries(page, year, month, day, name);
         }
        
         public override bool CreateBlogEntry(BlogEntry blogEntryToCreate)

@@ -13,9 +13,9 @@ namespace UnleashedBlog.Controllers
         {
             _repository = repository;
         }
-        public ActionResult Index(int? year, int? month, int? day, string name)
+        public ActionResult Index(int? page,int? year, int? month, int? day, string name)
         {
-            return View(_repository.ListBlogEntries(year, month, day, name));
+            return View(_repository.ListBlogEntries(page,year, month, day, name));
         }
     }
 }

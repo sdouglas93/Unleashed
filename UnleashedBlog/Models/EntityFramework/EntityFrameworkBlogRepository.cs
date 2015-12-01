@@ -43,12 +43,6 @@ namespace UnleashedBlog.Models.EntityFramework
 
         }
 
-        public override List<BlogEntry> ListBlogEntries()
-        {
-            //throw new NotImplementedException();
-            return QueryBlogEntries().ToList();
-        }
-
         public override void CreateBlogEntry(BlogEntry blogEntryToCreate)
         {
             //throw new NotImplementedException();
