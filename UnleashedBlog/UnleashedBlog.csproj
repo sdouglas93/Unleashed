@@ -74,6 +74,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BlogLinkHelper.cs" />
+    <Compile Include="Helpers\BlogPagerHelper.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\BlogEntry.cs" />
     <Compile Include="Models\BlogRepositoryBase.cs" />
@@ -85,6 +87,7 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\EntityFrameworkBlogRepository.cs" />
+    <Compile Include="Paging\IPagedList.cs" />
     <Compile Include="Paging\PagedList.cs" />
     <Compile Include="Paging\PageLinqExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,7 +101,10 @@
     <Content Include="Views\Archive\Index.aspx" />
     <Content Include="Views\Blog\Create.aspx" />
     <Content Include="Views\Blog\Index.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Views\Shared\BlogEntries.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

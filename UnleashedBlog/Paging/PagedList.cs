@@ -5,7 +5,7 @@ using System.Web;
 
 namespace UnleashedBlog.Paging
 {
-    public class PagedList<T> : List<T>
+    public class PagedList<T> : List<T>,IPagedList 
     {
         public PagedList(IEnumerable<T> items, int pageIndex, int pageSize, int totalItemCount, string sortExpression)
         {
