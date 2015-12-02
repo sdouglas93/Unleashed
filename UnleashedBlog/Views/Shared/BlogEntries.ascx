@@ -3,16 +3,15 @@
 <%foreach (var entry in Model)
   {  %>
   <div class = "blogContainer">
-    <h2 class = "blogEntryDatePublished"><%= entry.DatePublished.ToString ("D") %></h2>
-  
-    <h3 class="blogEntryTitle"><%= Html.BlogLink(entry) %></h3>
-    <div class="blogEntryText">
+   <h1 class="blogEntryTitle"><%= Html.BlogLink(entry) %></h1>
+<%--   <h2 class = "blogEntryDatePublished"><%= entry.DatePublished.ToString ("D") %></h2>--%>
+    <%--<div class="blogEntryText">
     <%= entry.Text %>
-    </div>
+    </div>--%>
     <div class="blogEntryFooter">
-
-    Posted by <%= entry.Author %> at <%= entry.DatePublished.ToString("t") %>
+    Posted by <%= entry.Author %> at <%= entry.DatePublished.ToString("d") %>
     </div>
+     <div id="styleLine"></div>
   
   </div>
 

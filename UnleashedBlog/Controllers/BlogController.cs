@@ -23,7 +23,6 @@ namespace UnleashedBlog.Controllers
         {
             return View(_blogService.ListBlogEntries(page));
         }
-
         public ActionResult Create()
         {
             return View();

@@ -17,3 +17,4 @@ C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\bin\UnleashedBlog.dll
 C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\bin\UnleashedBlog.pdb
 C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\obj\Debug\UnleashedBlog.dll
 C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\obj\Debug\UnleashedBlog.pdb
+C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\obj\Debug\UnleashedBlog.csprojResolveAssemblyReference.cache
