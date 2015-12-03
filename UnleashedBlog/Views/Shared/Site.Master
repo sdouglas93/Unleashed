@@ -1,17 +1,43 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
 </head>
 
 <body>
+<img id="headerImg" src="/Content/images/honkong.jpg" alt= "homeResto" style= "width: 100%; height: 400px;"/>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <li class="navbar-brand"><%: Html.ActionLink("RestoBlog", "Index", "Blog")%></li>
+      <%--<a class="navbar-brand" href="Index.aspx">RestoBlog</a>--%>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+       <%-- <li><%: Html.ActionLink("About", "About", "Home")%></li>--%>
+        <li><%: Html.ActionLink("Nouveau Blog", "Create", "Blog")%></li>
+        <li><%: Html.ActionLink("Must Reads", "Index", "Blog")%></li>
+        <li><%: Html.ActionLink("Comments", "Index", "Blog")%></li>
+       <%-- <li><a href="#">Must Reads</a></li>
+        <li><a href="#">Comments</a></li> --%> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="page">
-
+        
         <div id="header">
-            <div id="title">
+            <%--<div id="title">
                 <h1>Master Blogger</h1>
             </div>
               
@@ -26,7 +52,7 @@
                     <li><%: Html.ActionLink("About", "About", "Home")%></li>
                 </ul>
             
-            </div>
+            </div>--%>
         </div>
 
         <div id="main">
@@ -36,5 +62,13 @@
             </div>
         </div>
     </div>
+<script type="text/javascript">
+//    $('.page').prepend('<img id="theImg" src="../Content/images/date-night.jpg" />');
+  /*  $('#headerImg').css({
+    width:"100%",
+    height: "400px"
+    });*/
+
+</script>
 </body>
 </html>

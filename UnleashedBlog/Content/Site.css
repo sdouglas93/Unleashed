@@ -111,10 +111,10 @@ page width. Or, you can specify an exact pixel width. */
 
 #main
 {
-    padding: 30px 30px 15px 30px;
-    background-color: #fff;
-    margin-bottom: 30px;
-    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+    padding: 30px 30px 150px 30px !important;
+    background-color: #0D0D0D !important;
+    margin-bottom: 30px !important;
+    _height: 1px !important; /* only IE6 applies CSS properties starting with an underscore */
 }
 
 #footer
@@ -127,6 +127,18 @@ page width. Or, you can specify an exact pixel width. */
     font-size: .9em;
 }
 
+/* NAV BAR  
+----------------------------------------------------------*/
+.container-fluid
+{
+    background-color:#000000 !important;
+}
+.container-fluid a
+{
+    color:#fad66d !important;
+    text-decoration: none;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
 /* TAB MENU   
 ----------------------------------------------------------*/
 ul#menu
@@ -342,12 +354,12 @@ div#title
 {
     width: 6em;
 }
-/* Styles for blogEntryDatePublished
+/* Styles for index page
 -----------------------------------------------------------*/
 
 .blogEntryDatePublished
 {
-    color: #FF0080;
+    color: #fad66d;
     font : 24px;
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;    
 }
@@ -355,16 +367,25 @@ div#title
 h1.blogEntryTitle>a
 {
     text-decoration: none !important;
-    color:#FF0080 !important;
+    color:#fad66d !important;
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif !important; 
     font: 18px !important;
        
 }
 
-.blogEntryFooter,#pager>a
+.blogEntryFooter
 {
     text-decoration: none;
-    color:#FF0080;
+    color:#fad66d;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif; 
+    font: 15px;
+    margin-bottom: 10px;
+}
+
+#pager>a
+{
+    text-decoration: none;
+    color:#fad66d;
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif; 
     font: 15px;
 }
@@ -374,12 +395,26 @@ h1.blogEntryTitle>a
     border-style: dotted !important;
     border-bottom: 1px !important;
     border-bottom-width: thin !important;
-    color: #e9e9e9 !important;
+    color: #f8ffc8 !important;
     
 }
 #pager
 {
     text-align: center !important;    
     text-decoration: none !important;
-    color:#FF0080 !important;
+    color:#fad66d !important;
+    padding-top: 150px;
+    margin-bottom: -150px;
+    
+}
+
+body
+{
+    background-color: #000000  !important;
+}
+
+li,li.navbar-brand>a
+{
+    list-style-type: none;
+    text-decoration: none !important;
 }

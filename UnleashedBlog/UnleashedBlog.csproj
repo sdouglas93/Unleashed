@@ -97,6 +97,12 @@
     <Content Include="App_Data\BlogDB_log.ldf">
       <DependentUpon>BlogDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\images\date-night.jpg" />
+    <Content Include="Content\images\honkong.jpg" />
+    <Content Include="Content\images\lightwine.jpg" />
+    <Content Include="Content\images\night.jpg" />
+    <Content Include="Content\images\resto.jpg" />
+    <Content Include="Content\images\wine.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Views\Archive\Index.aspx" />
     <Content Include="Views\Blog\Create.aspx" />
@@ -129,9 +135,7 @@
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EntityDeploy Include="Models\EntityFramework\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
