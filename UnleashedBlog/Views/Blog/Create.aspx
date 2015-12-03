@@ -10,50 +10,80 @@
 
     <%= Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.") %>
 
-    <% using (Html.BeginForm()) {%>
+    <% using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+       {%>
+   <%--  <form class="form-horizontal" role="form">--%>
+        
+       
+      <%-- <fieldset>--%>
+          <%--  <legend>Fields</legend>--%>
 
-        <fieldset>
-            <legend>Fields</legend>
-            <p>
-                <label for="Author">Author:</label>
-                <%= Html.TextBox("Author") %>
-                <%= Html.ValidationMessage("Author", "*") %>
-            </p>
-            <p>
-                <label for="Description">Description:</label>
-                <%= Html.TextBox("Description") %>
-                <%= Html.ValidationMessage("Description", "*") %>
-            </p>
-            <p>
-                <label for="DateModified">DateModified:</label>
-                <%= Html.TextBox("DateModified") %>
-                <%= Html.ValidationMessage("DateModified", "*") %>
-            </p>
-            <p>
-                <label for="DatePublished">DatePublished:</label>
-                <%= Html.TextBox("DatePublished") %>
-                <%= Html.ValidationMessage("DatePublished", "*") %>
-            </p>
-            <p>
-                <label for="Name">Name:</label>
-                <%= Html.TextBox("Name") %>
-                <%= Html.ValidationMessage("Name", "*") %>
-            </p>
-            <p>
-                <label for="Text">Text:</label>
-                <%= Html.TextBox("Text") %>
-                <%= Html.ValidationMessage("Text", "*") %>
-            </p>
-            <p>
-                <label for="Title">Title:</label>
-                <%= Html.TextBox("Title") %>
-                <%= Html.ValidationMessage("Title", "*") %>
-            </p>
+          <div class="form-group">
+           <label for="Author" class="col-sm-2 control-label">Author:</label>
+           <div class="col-sm-10">
+                <%= Html.TextBox("Author", " ", new { @class = "form-control" })%>
+                <%= Html.ValidationMessage("Author", "*")%>
+               
+            </div>
+            </div>
+
+             <div class="form-group">
+              <label class="col-sm-2 control-label" for="Title">Title:</label>
+            <div class="col-sm-10">
+               
+                <%= Html.TextBox("Title", " ", new { @class = "form-control" })%>
+                <%= Html.ValidationMessage("Title", "*")%>
+             </div>
+            </div>
+
+            <div class="form-group">
+             <label class="control-label col-sm-2" for="Description">Description:</label>
+           <div class="col-sm-10">
+               
+                <%= Html.TextBox("Description", " ", new { @class = "form-control" })%>
+                <%= Html.ValidationMessage("Description", "*")%>
+             </div>
+                 </div>
+
+             <div class="form-group">
+              <label class="control-label col-sm-2" for="DateModified">DateModified:</label>
+            <div class="col-sm-10">
+               
+                <%= Html.TextBox("DateModified", " ", new { @class = "form-control" })%>
+                <%= Html.ValidationMessage("DateModified", "*")%>
+             </div>
+                 </div>
+            
+                <div class="form-group">            
+                <label class="control-label col-sm-2" for="DatePublished">DatePublished:</label>
+                <div class="col-sm-10">
+                <%= Html.TextBox("DatePublished", " ", new { @class = "form-control" })%>
+                <%= Html.ValidationMessage("DatePublished", "*")%>
+            </div>
+            </div>
+
+            <div class="form-group">
+             <label class="control-label col-sm-2" for="Name">Name:</label> 
+            <div class="col-sm-10">
+               
+                <%= Html.TextBox("Name", " ", new { @class = "form-control" })%>
+                <%= Html.ValidationMessage("Name", "*")%>
+          </div>
+          </div>
+          <div class="form-group"> 
+          <label class="control-label col-sm-2" for="Text">Text:</label>
+            <div class="col-sm-10">
+                
+                <%= Html.TextBox("Text", " ", new { @class = "form-control" })%>
+                <%= Html.ValidationMessage("Text", "*")%>
+            </div>
+            </div>
+            
             <p>
                 <input type="submit" value="Create" />
             </p>
-        </fieldset>
-
+        <%--</fieldset>--%>
+        <%--</form>--%>
     <% } %>
 
     <div>
