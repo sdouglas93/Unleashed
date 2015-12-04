@@ -6,17 +6,18 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Create</h2>
+<div id= "formatForm">
+<div class="formStyle">
+    <h1>Create Un Nouveau Blog</h1>
 
     <%= Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.") %>
 
     <% using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
        {%>
    <%--  <form class="form-horizontal" role="form">--%>
-        
+   
        
       <%-- <fieldset>--%>
-          <%--  <legend>Fields</legend>--%>
 
           <div class="form-group">
            <label for="Author" class="col-sm-2 control-label">Author:</label>
@@ -73,21 +74,21 @@
           <div class="form-group"> 
           <label class="control-label col-sm-2" for="Text">Text:</label>
             <div class="col-sm-10">
-                
-                <%= Html.TextBox("Text", " ", new { @class = "form-control" })%>
+                <%= @Html.TextArea("Text", " ", new { @class = "form-control",rows="6" })%>
                 <%= Html.ValidationMessage("Text", "*")%>
             </div>
             </div>
-            
-            <p>
-                <input type="submit" value="Create" />
-            </p>
+
+            <div>
+                <input type="submit" class="btn btn-warning value="Create" />
+            </div>
         <%--</fieldset>--%>
         <%--</form>--%>
     <% } %>
-
-    <div>
+</div>
+</div>
+   <%-- <div >
         <%=Html.ActionLink("Back to List", "Index") %>
-    </div>
+    </div>--%>
 
 </asp:Content>

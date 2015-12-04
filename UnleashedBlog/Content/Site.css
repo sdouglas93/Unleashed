@@ -418,3 +418,69 @@ li,li.navbar-brand>a
     list-style-type: none;
     text-decoration: none !important;
 }
+
+
+/* Styles for create page
+-----------------------------------------------------------*/
+
+input[type="text"]
+{
+    width: 350px !important;
+}
+
+.formStyle
+{   
+background:#0D0D0D !important; 
+padding: 20px 30px 45px 30px !important;
+margin: -30px -30px 30px -30px !important;
+-webkit-border-radius: 10px 10px 0 0;
+color: #fad66d;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.12);
+font: normal 18px 'Bitter', serif;
+box-shadow: inset 0 2px 2px 0 rgba(255,255,255,0.17);
+border:1px solid #fad66d;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.formStyle h1
+{
+    border-top:1px solid #fad66d;
+    border-bottom:1px solid #fad66d;
+    padding: 20px 30px 45px 30px !important;
+    margin: -30px -30px 30px -30px !important;
+    -webkit-border-radius: 10px 10px 0 0;
+    max-width: 700px;
+    color: #0D0D0D;
+    background:#fad66d;
+    
+
+}
+.form-horizontal .control-label
+{
+    display:block;
+    text-align:left !important;
+    margin-right:20px !important;
+}
+
+#formatForm
+{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 95px;
+}
+
+.btn-warning{
+background-color:#fad66d !important; 
+border-color:#fad66d !important;
+float:right !important;
+color: #0D0D0D !important;
+}
+
+.btn
+{
+ padding: 8px 20px;   
+}

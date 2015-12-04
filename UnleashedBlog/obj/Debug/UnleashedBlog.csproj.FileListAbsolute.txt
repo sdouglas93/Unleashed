@@ -19,3 +19,4 @@ C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\obj\Debug\UnleashedBlo
 C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\obj\Debug\UnleashedBlog.pdb
 C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\bin\WebActivatorEx.dll
+C:\Users\H153813\Documents\GitHub\Unleashed\UnleashedBlog\obj\Debug\UnleashedBlog.csprojResolveAssemblyReference.cache
