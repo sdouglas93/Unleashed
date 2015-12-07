@@ -419,6 +419,11 @@ li,li.navbar-brand>a
     text-decoration: none !important;
 }
 
+/*.blogContainer
+{
+    max-width: 700px;    
+}
+*/
 
 /* Styles for create page
 -----------------------------------------------------------*/

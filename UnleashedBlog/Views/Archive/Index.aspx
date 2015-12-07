@@ -1,10 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<UnleashedBlog.Models.BlogEntry>>" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+<%--<script type="type/javascript">
+
+jQuery("#jQGridDemo").jqGrid({
+  url:'',
+  datatype:"json",
+  colNames:['DatePublished','DateModified,'Title',
+  'Description',' Name','Auhtor','id','Text'],
+  colModel:[],
+  rowNum:10,
+  sortname: 'DatePublished',
+  viewrecords: true,
+  sortorder:"desc"
+  caption: "Le Blog"
+
+
+});
+
+</script>--%>
 
     <h2>Index</h2>
 

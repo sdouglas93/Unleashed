@@ -39,13 +39,25 @@ namespace UnleashedBlog
             "archive/{year}",
              new { controller = "Archive", action = "Index" }
              );
-           
+
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Blog", action = "Index", id = "" } // Parameter defaults
             );
 
+            routes.MapRoute(
+               "Contact", // Route name
+               "contact/{Contact}", // URL with parameters
+               new { controller = "Contact", action = "Index"} // Parameter defaults
+           );
+
+            routes.MapRoute(
+               "Contacts", // Route name
+               "contact/{Contact}", // URL with parameters
+               new { controller = "Contact", action = "Contact" } // Parameter defaults
+           );
+           
         }
 
         protected void Application_Start()
