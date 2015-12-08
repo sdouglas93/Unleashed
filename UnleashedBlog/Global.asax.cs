@@ -55,7 +55,7 @@ namespace UnleashedBlog
             routes.MapRoute(
                "Contacts", // Route name
                "contact/{Contact}", // URL with parameters
-               new { controller = "Contact", action = "Contact" } // Parameter defaults
+               new { controller = "View", action = "Contact" } // Parameter defaults
            );
            
         }

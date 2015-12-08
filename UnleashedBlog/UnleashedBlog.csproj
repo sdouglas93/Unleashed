@@ -78,6 +78,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Contact\NewForm.ascx.cs">
+      <DependentUpon>NewForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contact\NewForm.ascx.designer.cs">
+      <DependentUpon>NewForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\ContactForm.ascx.cs">
+      <DependentUpon>ContactForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\ContactForm.ascx.designer.cs">
+      <DependentUpon>ContactForm.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -102,12 +116,22 @@
     <Compile Include="Paging\PagedList.cs" />
     <Compile Include="Paging\PageLinqExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Shared\Form.ascx.cs">
+      <DependentUpon>Form.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Form.ascx.designer.cs">
+      <DependentUpon>Form.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\BlogDB.mdf" />
     <Content Include="App_Data\BlogDB_log.ldf">
       <DependentUpon>BlogDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Views\Contact\Index.aspx" />
+    <Content Include="Views\Contact\NewForm.ascx" />
+    <Content Include="Views\Shared\ContactForm.ascx" />
     <Content Include="Content\images\date-night.jpg" />
     <Content Include="Content\images\honkong.jpg" />
     <Content Include="Content\images\lightwine.jpg" />
@@ -288,9 +312,8 @@
     <Content Include="Views\Blog\Contact.aspx" />
     <Content Include="Views\Blog\Create.aspx" />
     <Content Include="Views\Blog\Index.aspx" />
-    <Content Include="Views\Contact\Contact.aspx" />
-    <Content Include="Views\Contact\Index.aspx" />
     <Content Include="Views\Shared\BlogEntries.ascx" />
+    <Content Include="Views\Shared\Form.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

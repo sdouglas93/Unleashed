@@ -44,7 +44,7 @@
         <li><%: Html.ActionLink("Nouveau Blog", "Create", "Blog")%></li>
         <li><%: Html.ActionLink("Must Reads", "Index", "Blog")%></li>
         <li><%: Html.ActionLink("Comments", "Index", "Contact")%></li>
-        <li><%: Html.ActionLink("Comment", "Contact", "Contact")%></li>
+        <li><%: Html.ActionLink("Comment", "Contact")%></li>
        <%-- <li><a href="#">Must Reads</a></li>
         <li><a href="#">Comments</a></li> --%> 
       </ul>
