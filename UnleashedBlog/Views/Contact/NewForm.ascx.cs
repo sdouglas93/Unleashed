@@ -20,7 +20,7 @@ namespace UnleashedBlog.Views.Contact
         //{
 
         //    MailMessage message = new MailMessage();
-        //    message.To.Add("dacute1x3@gmail.com");
+        //    message.To.Add("");
         //    message.From = new MailAddress(txtEmail.Text);
         //    message.Subject = TextSubject.Text;
         //    message.Body = txtName.Text + Environment.NewLine + txtMessage.Value;
@@ -30,7 +30,7 @@ namespace UnleashedBlog.Views.Contact
         //    smtp.Port = 587;
         //    smtp.EnableSsl = true;
         //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-        //    smtp.Credentials = new System.Net.NetworkCredential("dacute1x3@gmail.com", "babyface");
+        //    smtp.Credentials = new System.Net.NetworkCredential("", "");
         //    smtp.Send(message);
         //}
 
