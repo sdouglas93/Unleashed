@@ -19,6 +19,7 @@ namespace UnleashedBlog.Views.Contact
         //public void btnSend_Click(object sender, eventargs e)
         //{
 
+<<<<<<< HEAD
         //    mailmessage message = new mailmessage();
         //    message.to.add("dacute1x3@gmail.com");
         //    message.from = new mailaddress(txtemail.text);
@@ -32,6 +33,21 @@ namespace UnleashedBlog.Views.Contact
         //    smtp.deliverymethod = smtpdeliverymethod.network;
         //    smtp.credentials = new system.net.networkcredential("dacute1x3@gmail.com", "babyface");
         //    smtp.send(message);
+=======
+        //    MailMessage message = new MailMessage();
+        //    message.To.Add("");
+        //    message.From = new MailAddress(txtEmail.Text);
+        //    message.Subject = TextSubject.Text;
+        //    message.Body = txtName.Text + Environment.NewLine + txtMessage.Value;
+
+        //    SmtpClient smtp = new SmtpClient();
+        //    smtp.Host = "smtp.gmail.com";
+        //    smtp.Port = 587;
+        //    smtp.EnableSsl = true;
+        //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //    smtp.Credentials = new System.Net.NetworkCredential("", "");
+        //    smtp.Send(message);
+>>>>>>> 2a191262b2aa4c20f5e45399f6dae5b3e5762764
         //}
 
     }
