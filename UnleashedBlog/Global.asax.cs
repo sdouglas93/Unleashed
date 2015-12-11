@@ -57,7 +57,18 @@ namespace UnleashedBlog
                "contact/{Contact}", // URL with parameters
                new { controller = "View", action = "Contact" } // Parameter defaults
            );
-           
+
+            /*routes.MapRoute(
+               "Details",
+               "archive/{year}/{month}/{day}/{name}",
+                new { controller = "Archive", action = "Details" }
+           );*/
+
+            routes.MapRoute(
+               "Details",
+               "archive/{Details}",
+                new { controller = "Archive", action = "Details" }
+           );
         }
 
         protected void Application_Start()

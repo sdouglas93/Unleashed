@@ -22,5 +22,9 @@ namespace UnleashedBlog.Models
         public int id { get; set; }
 
         public string Text { get; set; }
+
+        public int CommentCount { get; set; }
+
+        public List<Comment> Comments { get; set; }
     }
 }

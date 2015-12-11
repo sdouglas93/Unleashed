@@ -1,46 +1,27 @@
-﻿<%--<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
-<%@Register TagPrefix="scott" TagName="header" Src="NewForm.ascx"  %>
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id= "form1" method="post" runat="server">
-        <scott:header
-        ID="MyHeader" 
-        runat="server" 
-        /> 
-    </form>
-</body>
-</html>
---%>
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<UnleashedBlog.Models.BlogEntry>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<UnleashedBlog.Models.BlogEntry>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Details
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
- 
-   <%-- <% @Html.RenderPartial("BlogEntries"); %>--%>
+<%-- 
+    <% Html.RenderPartial("BlogEntries"); %>--%>
     
-    <div class="commentsContainer">
-    <% if (Model != null)
-    { %>
-
+   <div class="commentsContainer">
+   <% if (Model.Comments != null)
+      {%>
     <% foreach (var comment in Model.Comments)
        {  %>
         <div class="commentContainer">
-        <h3><%= Html.Encode( comment.Title ) %></h3>
+        <h3><%= Html.Encode(comment.Title)%></h3>
         <div class="commentHeader">
-        Posted by <%--<%= comment.Name %>--%>
-        <%= Html.NameLink(comment) %>
-        on <%= comment.DatePublished.ToString("d") %>
+        Posted by <%= comment.Name%>
+       <%= Html.NameLink(comment)%>
+        on <%= comment.DatePublished.ToString("d")%>
         </div>
         <div class="commentText">
-            <%= Html.Encode( comment.Text ) %>
+            <%= Html.Encode(comment.Text)%>
         </div>
         </div>
     <% } %>
@@ -54,10 +35,10 @@
     <% using (Html.BeginForm("Create", "Comment"))
        { %>
        
-    <%--    <%= Html.Hidden("Comment.BlogEntryId", Model.id) %>--%>
+        <%= Html.Hidden("Comment.BlogEntryId", Model.id) %>
         <p>    
-            <label for="Comment.Title">Title:</label> <%-- + Model.Title --%>
-            <br /><%= Html.TextBox("Comment.Title", "RE: " )%>  
+            <label for="Comment.Title">Title:</label>
+            <br /><%= Html.TextBox("Comment.Title", "RE: " + Model.Title)%>  
         </p>
         <p>
             <label for="Comment.Name">Name:</label>

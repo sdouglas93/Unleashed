@@ -4,23 +4,57 @@
 <%@ Import Namespace= "System.Net" %>
 
 <script runat="server" type="text/C#">
-    public void btnSend_Click(object sender, EventArgs e){
+    //public void btnSend_Click(object sender, EventArgs e){
 
-        MailMessage message = new MailMessage();
-        message.To.Add("");
-        message.From = new MailAddress(txtEmail.Text);
-        message.Subject = TextSubject.Text;
-        message.Body = txtName.Text + Environment.NewLine + txtMessage.Value;
+    //    MailMessage message = new MailMessage();
+    //    message.To.Add("");
+    //    message.From = new MailAddress(txtEmail.Text);
+    //    message.Subject = TextSubject.Text;
+    //    message.Body = txtName.Text + Environment.NewLine + txtMessage.Value;
 
-        SmtpClient smtp = new SmtpClient();
-        smtp.Host = "smtp.gmail.com";
-        smtp.Port = 587;
-        smtp.EnableSsl = true;
-        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-        smtp.Credentials = new System.Net.NetworkCredential("", "");
-        smtp.Send(message);
+    //    SmtpClient smtp = new SmtpClient();
+    //    smtp.Host = "smtp.gmail.com";
+    //    smtp.Port = 587;
+    //    smtp.EnableSsl = true;
+    //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+    //    smtp.Credentials = new System.Net.NetworkCredential("", "");
+    //    smtp.Send(message);
+    //}
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        btnSend.Click += new EventHandler(this.btnSend_Click);
     }
 
+    public void btnSend_Click(object sender, EventArgs e)
+    {
+        MailMessage msg = new MailMessage();
+        msg.To.Add(new MailAddress("dacute1x3@gmail.com", "Sarah"));
+        msg.From = new MailAddress(txtEmail.Text, txtName.Text);
+        msg.Subject = TextSubject.Text;
+        msg.Body = txtMessage.Value;
+
+        SmtpClient client = new SmtpClient();
+        client.Port = 587; //Your smtp server's port
+        client.Host = "smtp.gmail.com";
+        client.EnableSsl = true;
+        client.Timeout = 10000;
+        client.DeliveryMethod = SmtpDeliveryMethod.Network;
+        client.UseDefaultCredentials = false;
+        client.Credentials = new System.Net.NetworkCredential("dacute1x3@gmail.com", "Jaimechocolat#93");
+        //client.Credentials = cred;
+
+
+
+        try
+        {
+            client.Send(msg);
+        }
+        catch (Exception exception)
+        {
+
+            Console.WriteLine(exception.Message);
+        }
+    }
     public void btnReset_Click(object sender, EventArgs e) {
 
         txtName.Text = "";
@@ -63,7 +97,7 @@ ControlToValidate="TextSubject"></asp:RequiredFieldValidator>
 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please enter a message." ControlToValidate = "txtMessage">
 </asp:RequiredFieldValidator>
 
-<asp:Button runat="server" ID="btnSend" OnClick="btnSend_Click" Text="Send" />
+<asp:Button runat="server" ID="btnSend" OnClick= "btnSend_Click" Text="Send" />
 <asp:Button runat="server" ID="btnReset" CausesValidation= "false" OnClick="btnReset_Click" Text="Reset" />
 
 </asp:Panel>

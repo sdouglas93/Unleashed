@@ -80,6 +80,22 @@ namespace UnleashedBlog.Models.EntityFramework
             }
         }
         private ObjectSet<BlogEntryEntity> _BlogEntryEntities;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<CommentEntity> CommentEntities
+        {
+            get
+            {
+                if ((_CommentEntities == null))
+                {
+                    _CommentEntities = base.CreateObjectSet<CommentEntity>("CommentEntities");
+                }
+                return _CommentEntities;
+            }
+        }
+        private ObjectSet<CommentEntity> _CommentEntities;
 
         #endregion
 
@@ -91,6 +107,14 @@ namespace UnleashedBlog.Models.EntityFramework
         public void AddToBlogEntryEntities(BlogEntryEntity blogEntryEntity)
         {
             base.AddObject("BlogEntryEntities", blogEntryEntity);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the CommentEntities EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCommentEntities(CommentEntity commentEntity)
+        {
+            base.AddObject("CommentEntities", commentEntity);
         }
 
         #endregion
@@ -325,6 +349,256 @@ namespace UnleashedBlog.Models.EntityFramework
                 _Text = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Text");
                 OnTextChanged();
+            }
+        }
+        private global::System.String _Text;
+        partial void OnTextChanging(global::System.String value);
+        partial void OnTextChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="UnleashedBlog.Models.EntityFramework", Name="CommentEntity")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class CommentEntity : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new CommentEntity object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="blogEntryId">Initial value of the BlogEntryId property.</param>
+        /// <param name="title">Initial value of the Title property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="datePublished">Initial value of the DatePublished property.</param>
+        /// <param name="text">Initial value of the Text property.</param>
+        public static CommentEntity CreateCommentEntity(global::System.Int32 id, global::System.Int32 blogEntryId, global::System.String title, global::System.String name, global::System.DateTime datePublished, global::System.String text)
+        {
+            CommentEntity commentEntity = new CommentEntity();
+            commentEntity.id = id;
+            commentEntity.BlogEntryId = blogEntryId;
+            commentEntity.Title = title;
+            commentEntity.Name = name;
+            commentEntity.DatePublished = datePublished;
+            commentEntity.Text = text;
+            return commentEntity;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 BlogEntryId
+        {
+            get
+            {
+                return _BlogEntryId;
+            }
+            set
+            {
+                if (_BlogEntryId != value)
+                {
+                    OnBlogEntryIdChanging(value);
+                    ReportPropertyChanging("BlogEntryId");
+                    _BlogEntryId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("BlogEntryId");
+                    OnBlogEntryIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _BlogEntryId;
+        partial void OnBlogEntryIdChanging(global::System.Int32 value);
+        partial void OnBlogEntryIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                if (_Title != value)
+                {
+                    OnTitleChanging(value);
+                    ReportPropertyChanging("Title");
+                    _Title = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Title");
+                    OnTitleChanged();
+                }
+            }
+        }
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                if (_Name != value)
+                {
+                    OnNameChanging(value);
+                    ReportPropertyChanging("Name");
+                    _Name = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Name");
+                    OnNameChanged();
+                }
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Url
+        {
+            get
+            {
+                return _Url;
+            }
+            set
+            {
+                OnUrlChanging(value);
+                ReportPropertyChanging("Url");
+                _Url = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Url");
+                OnUrlChanged();
+            }
+        }
+        private global::System.String _Url;
+        partial void OnUrlChanging(global::System.String value);
+        partial void OnUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime DatePublished
+        {
+            get
+            {
+                return _DatePublished;
+            }
+            set
+            {
+                if (_DatePublished != value)
+                {
+                    OnDatePublishedChanging(value);
+                    ReportPropertyChanging("DatePublished");
+                    _DatePublished = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("DatePublished");
+                    OnDatePublishedChanged();
+                }
+            }
+        }
+        private global::System.DateTime _DatePublished;
+        partial void OnDatePublishedChanging(global::System.DateTime value);
+        partial void OnDatePublishedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Text
+        {
+            get
+            {
+                return _Text;
+            }
+            set
+            {
+                if (_Text != value)
+                {
+                    OnTextChanging(value);
+                    ReportPropertyChanging("Text");
+                    _Text = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Text");
+                    OnTextChanged();
+                }
             }
         }
         private global::System.String _Text;

@@ -80,7 +80,7 @@
             </div>
 
             <div>
-                <input type="submit" class="btn btn-warning value="Create" />
+                <input type="submit" class="btn btn-warning" value="Create" />
             </div>
         <%--</fieldset>--%>
         <%--</form>--%>

@@ -2,6 +2,7 @@
 <Schema Namespace="UnleashedBlog.Models.EntityFramework" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="BlogDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BlogEntryEntities" EntityType="UnleashedBlog.Models.EntityFramework.BlogEntryEntity" />
+    <EntitySet Name="CommentEntities" EntityType="UnleashedBlog.Models.EntityFramework.CommentEntity" />
   </EntityContainer>
   <EntityType Name="BlogEntryEntity">
     <Key>
@@ -15,5 +16,23 @@
     <Property Name="Title" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
     <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CommentEntity">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="BlogEntryId" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="DatePublished" />
+      <PropertyRef Name="Text" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="BlogEntryId" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DatePublished" Nullable="false" />
+    <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

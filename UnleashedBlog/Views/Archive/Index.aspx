@@ -60,7 +60,7 @@ jQuery("#jQGridDemo").jqGrid({
         <tr>
             <td>
                 <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-                <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })%> |
+                <%: Html.ActionLink("Details", "Details", "Archive", new {  @id=item.id  })%> |
                 <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })%>
             </td>
             <td>
@@ -94,7 +94,7 @@ jQuery("#jQGridDemo").jqGrid({
     </table>
 
     <p>
-        <%: Html.ActionLink("Create New", "Create") %>
+        <%: Html.ActionLink("Create New", "Details") %>
     </p>
 
 </asp:Content>

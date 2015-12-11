@@ -12,7 +12,7 @@
 
     <%= Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.") %>
 
-    <% using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+    <% using (Html.BeginForm("Contact","Contact", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
        {%>
    <%--  <form class="form-horizontal" role="form">--%>
    
@@ -22,7 +22,7 @@
           <div class="form-group">
            <label for="firstName" class="col-sm-2 control-label">First Name:</label>
            <div class="col-sm-10">
-                <%= Html.TextBox("firstName", " ", new { @class = "form-control" })%>
+                <%= Html.TextBox("firstName", "", new { @class = "form-control", @id = "firstName" })%>
                 <%= Html.ValidationMessage("firstName", "*")%>
                
             </div>
@@ -32,7 +32,7 @@
               <label for="lastName" class="col-sm-2 control-label">Last Name:</label>
             <div class="col-sm-10">
                
-                <%= Html.TextBox("lastName", " ", new { @class = "form-control" })%>
+                <%= Html.TextBox("lastName", "", new { @class = "form-control", @id = "lastName" })%>
                 <%= Html.ValidationMessage("lastName", "*")%>
              </div>
             </div>
@@ -41,7 +41,7 @@
              <label for="email" class="control-label col-sm-2">Email:</label>
            <div class="col-sm-10">
                
-                <%= Html.TextBox("email", " ", new { @class = "form-control" })%>
+                <%= Html.TextBox("email", "", new { @class = "form-control", @id = "email" })%>
                 <%= Html.ValidationMessage("email", "*")%>
              </div>
                  </div>
@@ -74,13 +74,13 @@
           <div class="form-group"> 
           <label for="comment" class="control-label col-sm-2" >Comments:</label>
             <div class="col-sm-10">
-                <%= @Html.TextArea("comment", " ", new { @class = "form-control", rows = "6" })%>
+                <%= @Html.TextArea("comment", "", new { @class = "form-control",@id = "comment" , rows = "6" })%>
                 <%= Html.ValidationMessage("comment", "*")%>
             </div>
             </div>
 
             <div>
-                <input type="submit" class="btn btn-warning value="Create" />
+                <input type="submit" class="btn btn-warning" value="Submit" />
             </div>
         <%--</fieldset>--%>
         <%--</form>--%>

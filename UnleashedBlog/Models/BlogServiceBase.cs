@@ -20,9 +20,17 @@ namespace UnleashedBlog.Models
 
         //public abstract IEnumerable<BlogEntry> ListBlogEntries();
         //public abstract IEnumerable<BlogEntry> ListBlogEntries(int? year, int? month, int? day, string name);
+        public abstract BlogEntry GetBlogEntry(int id);
+        public abstract BlogEntry GetBlogEntry(int year, int month, int day, string name);
+        //public abstract BlogEntry GetBlogEntry(int id);
         public abstract PagedList<BlogEntry> ListBlogEntries(int? page);
-        public abstract PagedList<BlogEntry> ListBlogEntries(int? page, int? year, int? month, int? day, string name);
+        public abstract PagedList<BlogEntry> ListBlogEntries(int? page, int? year, int? month, int? day);
         public abstract bool CreateBlogEntry(BlogEntry blogEntryToCreate);
-        
+
+        // Comment methods
+        public abstract bool CreateComment(Comment commentToCreate);
+
+        // Archive Info method
+        public abstract IList<ArchiveInfo> ListBlogEntriesByMonth();
     }
 }

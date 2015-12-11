@@ -17,26 +17,33 @@ namespace UnleashedBlog.Controllers
         public ActionResult Index()
         {
             return View();
+            //return View(Contact, new ContactInfo);
         }
 
+        public ActionResult Contact()
+        {
+            return View();
+            //return View(Contact, new ContactInfo);
+        }
         [HttpPost]
         public ActionResult Contact(ContactInfo contact) {
             if (ModelState.IsValid) 
             {
-                try
-                {
+                //try
+                //{
                     MailMessage message = new MailMessage();
-                    MailAddress from = new MailAddress(contact.email.ToString());
+                    message.From = new MailAddress(contact.email);
+                    //message.From = new MailAddress("dacute1x3@gmail.com");
                     message.To.Add("dacute1x3@gmail.com");
                     message.Subject = "Feel Free to Contact Us";
                     message.IsBodyHtml = false;
 
                     SmtpClient smtp = new SmtpClient();
-                    smtp.Host = "smtp.gmail.com";
-                    smtp.Port = 587;
-                    smtp.EnableSsl = true;
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtp.Credentials = new System.Net.NetworkCredential("dacute1x3@gmail.com", "babyface");
+                    //smtp.Host = "smtp.gmail.com";
+                    //smtp.Port = 25;
+                    //smtp.EnableSsl = true;
+                    //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    //smtp.Credentials = new System.Net.NetworkCredential("dacute1x3@gmail.com", "Jaimechocolat#93");
 
 
                     StringBuilder sb = new StringBuilder();
@@ -49,19 +56,22 @@ namespace UnleashedBlog.Controllers
                     sb.Append("Comments" + contact.comment);
 
                     message.Body = sb.ToString();
+                    try{
                     smtp.Send(message);
+                    return View("Contact", contact);
+                    //message.Dispose();
 
-                    message.Dispose();
-
-                    return View("Success");
+                   
                     
                 }
-                catch (Exception) 
+                catch (Exception exception) 
                 {
+                   
+                     Console.Write(exception);
                     return View("Error");
                 }
             }
-            return View();
+            return View("Contact", contact);
         }
 
     }

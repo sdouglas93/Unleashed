@@ -78,6 +78,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Helpers\ArchiveLinkHelper.cs" />
+    <Compile Include="Helpers\NameLinkHelper.cs" />
+    <Compile Include="Models\ArchiveInfo.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Views\Contact\NewForm.ascx.cs">
       <DependentUpon>NewForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +135,8 @@
     <Content Include="App_Data\BlogDB_log.ldf">
       <DependentUpon>BlogDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Views\Archive\Details.aspx" />
+    <Content Include="Views\Contact\Contact.aspx" />
     <Content Include="Views\Contact\Index.aspx" />
     <Content Include="Views\Contact\NewForm.ascx" />
     <Content Include="Views\Shared\ContactForm.ascx" />
@@ -309,7 +317,6 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.js" />
     <Content Include="Views\Archive\Index.aspx" />
-    <Content Include="Views\Blog\Contact.aspx" />
     <Content Include="Views\Blog\Create.aspx" />
     <Content Include="Views\Blog\Index.aspx" />
     <Content Include="Views\Shared\BlogEntries.ascx" />

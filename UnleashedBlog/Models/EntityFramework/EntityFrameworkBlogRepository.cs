@@ -25,6 +25,20 @@ namespace UnleashedBlog.Models.EntityFramework
             return entity;
         }
 
+        private CommentEntity ConvertCommentToCommentEntity(Comment comment)
+        {
+            var entity = new CommentEntity();
+            entity.id = comment.id;
+            entity.BlogEntryId = comment.BlogEntryId;
+            entity.DatePublished = comment.DatePublished;
+            entity.Email = comment.Email;
+            entity.Name = comment.Name;
+            entity.Text = comment.Text;
+            entity.Title = comment.Title;
+            entity.Url = comment.Url;
+            return entity;
+        }
+
         protected override IQueryable<BlogEntry> QueryBlogEntries()
         {
           //  throw new NotImplementedException();
@@ -38,17 +52,42 @@ namespace UnleashedBlog.Models.EntityFramework
                        DateModified = e.DateModified,
                        DatePublished= e.DatePublished,
                        Text = e.Text,
-                       Title = e.Title
+                       Title = e.Title,
+                       CommentCount = (from c in _entities.CommentEntities
+                                       where c.BlogEntryId == e.id
+                                       select c).Count()
+                       
                    };
 
         }
 
+        protected override IQueryable<Comment> QueryComments()
+        {
+            return from c in _entities.CommentEntities
+                   select new Comment
+                   {
+                       id = c.id,
+                       BlogEntryId = c.BlogEntryId,
+                       DatePublished = c.DatePublished,
+                       Email = c.Email,
+                       Name = c.Name,
+                       Text = c.Text,
+                       Title = c.Title,
+                       Url = c.Url
+                   };
+        }
         public override void CreateBlogEntry(BlogEntry blogEntryToCreate)
         {
-            //throw new NotImplementedException();
-
             var entity = ConvertBlogEntryToBlogEntryEntity(blogEntryToCreate);
             _entities.AddToBlogEntryEntities(entity);
+            _entities.SaveChanges();
+        }
+
+        public override void CreateComment(Comment commentToCreate)
+        {
+            var entity = ConvertCommentToCommentEntity(commentToCreate);
+
+            _entities.AddToCommentEntities(entity);
             _entities.SaveChanges();
         }
     }

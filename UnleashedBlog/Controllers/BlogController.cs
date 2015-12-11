@@ -5,19 +5,23 @@ using UnleashedBlog.Models.EntityFramework;
 
 namespace UnleashedBlog.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : ApplicationController
     {
-        private BlogServiceBase _blogService;
-
-        public BlogController()
-        {
-            _blogService = new BlogService(this.ModelState);
-        }
+        public BlogController() { }
 
         public BlogController(BlogRepositoryBase blogRepository)
-        {
-            _blogService = new BlogService(this.ModelState, blogRepository);
-        }
+            : base(blogRepository) { }
+        //private BlogServiceBase _blogService;
+
+        //public BlogController()
+        //{
+        //    _blogService = new BlogService(this.ModelState);
+        //}
+
+        //public BlogController(BlogRepositoryBase blogRepository)
+        //{
+        //    _blogService = new BlogService(this.ModelState, blogRepository);
+        //}
 
         public ActionResult Index(int? page)
         {

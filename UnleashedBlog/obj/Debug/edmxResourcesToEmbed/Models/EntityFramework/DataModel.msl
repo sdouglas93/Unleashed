@@ -15,5 +15,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CommentEntities">
+      <EntityTypeMapping TypeName="UnleashedBlog.Models.EntityFramework.CommentEntity">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="DatePublished" ColumnName="DatePublished" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="BlogEntryId" ColumnName="BlogEntryId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
