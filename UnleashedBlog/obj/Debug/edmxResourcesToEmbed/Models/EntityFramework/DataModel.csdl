@@ -20,13 +20,8 @@
   <EntityType Name="CommentEntity">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="BlogEntryId" />
-      <PropertyRef Name="Title" />
-      <PropertyRef Name="Name" />
-      <PropertyRef Name="DatePublished" />
-      <PropertyRef Name="Text" />
     </Key>
-    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Int32" Name="BlogEntryId" Nullable="false" />
     <Property Type="String" Name="Title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />

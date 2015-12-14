@@ -43,7 +43,9 @@ namespace UnleashedBlog.Controllers
                 return RedirectToRoute("Details", new { year = blogEntry.DatePublished.Year, month = blogEntry.DatePublished.Month, day = blogEntry.DatePublished.Day, name = blogEntry.Name });
             }
 
-            return View("~/Views/Contact/Index.aspx", blogEntry);
+
+            return View("~/Views/Archive/Details.aspx", blogEntry);
+            //return View("~/Views/Contact/Index.aspx", blogEntry);
             //return View("Details", blogEntry);
         }
 

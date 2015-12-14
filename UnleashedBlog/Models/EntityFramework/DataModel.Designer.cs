@@ -425,7 +425,7 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 BlogEntryId
         {
@@ -435,14 +435,11 @@ namespace UnleashedBlog.Models.EntityFramework
             }
             set
             {
-                if (_BlogEntryId != value)
-                {
-                    OnBlogEntryIdChanging(value);
-                    ReportPropertyChanging("BlogEntryId");
-                    _BlogEntryId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("BlogEntryId");
-                    OnBlogEntryIdChanged();
-                }
+                OnBlogEntryIdChanging(value);
+                ReportPropertyChanging("BlogEntryId");
+                _BlogEntryId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BlogEntryId");
+                OnBlogEntryIdChanged();
             }
         }
         private global::System.Int32 _BlogEntryId;
@@ -452,7 +449,7 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Title
         {
@@ -462,14 +459,11 @@ namespace UnleashedBlog.Models.EntityFramework
             }
             set
             {
-                if (_Title != value)
-                {
-                    OnTitleChanging(value);
-                    ReportPropertyChanging("Title");
-                    _Title = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Title");
-                    OnTitleChanged();
-                }
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
             }
         }
         private global::System.String _Title;
@@ -479,7 +473,7 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Name
         {
@@ -489,14 +483,11 @@ namespace UnleashedBlog.Models.EntityFramework
             }
             set
             {
-                if (_Name != value)
-                {
-                    OnNameChanging(value);
-                    ReportPropertyChanging("Name");
-                    _Name = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Name");
-                    OnNameChanged();
-                }
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
         private global::System.String _Name;
@@ -554,7 +545,7 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.DateTime DatePublished
         {
@@ -564,14 +555,11 @@ namespace UnleashedBlog.Models.EntityFramework
             }
             set
             {
-                if (_DatePublished != value)
-                {
-                    OnDatePublishedChanging(value);
-                    ReportPropertyChanging("DatePublished");
-                    _DatePublished = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("DatePublished");
-                    OnDatePublishedChanged();
-                }
+                OnDatePublishedChanging(value);
+                ReportPropertyChanging("DatePublished");
+                _DatePublished = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DatePublished");
+                OnDatePublishedChanged();
             }
         }
         private global::System.DateTime _DatePublished;
@@ -581,7 +569,7 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Text
         {
@@ -591,14 +579,11 @@ namespace UnleashedBlog.Models.EntityFramework
             }
             set
             {
-                if (_Text != value)
-                {
-                    OnTextChanging(value);
-                    ReportPropertyChanging("Text");
-                    _Text = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Text");
-                    OnTextChanged();
-                }
+                OnTextChanging(value);
+                ReportPropertyChanging("Text");
+                _Text = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Text");
+                OnTextChanged();
             }
         }
         private global::System.String _Text;
