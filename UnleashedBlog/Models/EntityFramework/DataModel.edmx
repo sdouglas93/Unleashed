@@ -124,7 +124,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="DataModel">
-        <EntityTypeShape EntityType="UnleashedBlog.Models.EntityFramework.BlogEntryEntity" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="UnleashedBlog.Models.EntityFramework.BlogEntryEntity" Width="1.5" PointX="0.5" PointY="0.5" Height="2.5571907552083331" IsExpanded="true" />
         <EntityTypeShape EntityType="UnleashedBlog.Models.EntityFramework.CommentEntity" Width="1.5" PointX="3.375" PointY="0.75" Height="2.5571907552083335" />
       </Diagram>
     </Diagrams>

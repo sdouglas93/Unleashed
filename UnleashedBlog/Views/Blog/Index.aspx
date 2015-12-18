@@ -6,6 +6,10 @@ Index
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <% @Html.RenderPartial("BlogEntries"); %>
+
+<%--<div id="pager">
+  <%= Html.BlogPager(Model) %>
+  </div>--%>
 </asp:Content>
 
 

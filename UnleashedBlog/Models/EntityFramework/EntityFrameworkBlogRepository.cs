@@ -129,11 +129,10 @@ namespace UnleashedBlog.Models.EntityFramework
         }
 
 
-        /// <summary>
         /// Returns blog entries from database
         /// converting from Microsot Entity Framework blog entry entities
         /// to application blog entries.
-        /// </summary>
+     
         protected override IQueryable<BlogEntry> QueryBlogEntries()
         {
             return from e in _entities.BlogEntryEntities

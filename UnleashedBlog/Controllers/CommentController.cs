@@ -28,10 +28,11 @@ namespace UnleashedBlog.Controllers
             _blogService = new BlogService(this.ModelState, blogRepository);
         }
 
-        /// <summary>
+
         /// Enables you to create a new comment.
-        /// </summary>
-        [AcceptVerbs(HttpVerbs.Post)]
+     
+        //[AcceptVerbs(HttpVerbs.Post)]
+        [HttpPost]
         public ActionResult Create([Bind(Prefix = "Comment", Exclude = "id")]Comment commentToCreate)
         {
             // Attempt to add comment
@@ -41,6 +42,8 @@ namespace UnleashedBlog.Controllers
             if (success)
             {
                 return RedirectToRoute("Details", new { year = blogEntry.DatePublished.Year, month = blogEntry.DatePublished.Month, day = blogEntry.DatePublished.Day, name = blogEntry.Name });
+                //return RedirectToRoute("Index", blogEntry);
+                //return View("~/Views/Contact/Index.aspx", blogEntry);
             }
 
 

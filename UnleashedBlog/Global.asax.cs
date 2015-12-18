@@ -17,9 +17,15 @@ namespace UnleashedBlog
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-            "ArchiveFull",
+               "Details",
+               "archive/{year}/{month}/{day}/{name}",
+                new { controller = "Archive", action = "Details" }
+           );
+
+            routes.MapRoute(
+            "archivefull",
             "archive/{year}/{month}/{day}/{name}",
-             new { controller = "Archive", action = "Index" }
+             new { controller = "archive", action = "index" }
             );
             
             routes.MapRoute(
@@ -58,17 +64,13 @@ namespace UnleashedBlog
                new { controller = "View", action = "Contact" } // Parameter defaults
            );
 
-            /*routes.MapRoute(
-               "Details",
-               "archive/{year}/{month}/{day}/{name}",
-                new { controller = "Archive", action = "Details" }
-           );*/
+            
 
-            routes.MapRoute(
-               "Details",
-               "archive/{Details}",
-                new { controller = "Archive", action = "Details" }
-           );
+           // routes.MapRoute(
+           //    "Details",
+           //    "archive/{Details}",
+           //     new { controller = "Archive", action = "Details" }
+           //);
         }
 
         protected void Application_Start()

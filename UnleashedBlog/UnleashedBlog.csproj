@@ -139,6 +139,7 @@
     <Content Include="Views\Contact\Contact.aspx" />
     <Content Include="Views\Contact\Index.aspx" />
     <Content Include="Views\Contact\NewForm.ascx" />
+    <Content Include="Views\Shared\BlogEntries.ascx" />
     <Content Include="Views\Shared\ContactForm.ascx" />
     <Content Include="Content\images\date-night.jpg" />
     <Content Include="Content\images\honkong.jpg" />
@@ -319,7 +320,7 @@
     <Content Include="Views\Archive\Index.aspx" />
     <Content Include="Views\Blog\Create.aspx" />
     <Content Include="Views\Blog\Index.aspx" />
-    <Content Include="Views\Shared\BlogEntries.ascx" />
+    <Content Include="Views\Shared\BlogEntry.ascx" />
     <Content Include="Views\Shared\Form.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

@@ -1,9 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<UnleashedBlog.Models.BlogEntry>>" %>
+﻿<%--<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<UnleashedBlog.Models.BlogEntry>>" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<p> paragraph </p>--%>
+
 
 <%--<script type="type/javascript">
 
@@ -23,7 +25,7 @@ jQuery("#jQGridDemo").jqGrid({
 });
 
 </script>--%>
-
+  <%--
     <h2>Index</h2>
 
     <table>
@@ -99,3 +101,22 @@ jQuery("#jQGridDemo").jqGrid({
 
 </asp:Content>
 
+--%>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<UnleashedBlog.Paging.PagedList<UnleashedBlog.Models.BlogEntry>>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+	Index
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+  <div id="blogEntries">
+    <% Html.RenderPartial("BlogEntries"); %>
+  </div>
+ <%-- <div id="loadingMoreEntries" style="display:none">
+    Loading more entries...
+    <img src='<%= Url.Content("~/Content/ajax-loader.gif") %>' 
+         alt="Loading more entries" />
+  </div>  --%>
+
+</asp:Content>

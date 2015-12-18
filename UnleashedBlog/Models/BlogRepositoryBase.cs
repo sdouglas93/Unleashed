@@ -115,10 +115,10 @@ namespace UnleashedBlog.Models
 
         public virtual BlogEntry GetBlogEntry(int id)
         {
-
+            id = 1;
             var blogEntry = (this.QueryBlogEntries()
-                    .Where(e => e.id == id).FirstOrDefault());
-            //.Select(e => e).FirstOrDefault());
+                    .Where(e => e.id == id)  //.FirstOrDefault());
+            .Select(e => e).FirstOrDefault());
 
             blogEntry.Comments = ListComments(blogEntry.id);
 
@@ -143,7 +143,10 @@ namespace UnleashedBlog.Models
                 .Where(e => e.DatePublished.Day == day)
                 .Where(e => e.Name == name)).FirstOrDefault();
 
+           
+
             blogEntry.Comments = ListComments(blogEntry.id);
+            Console.WriteLine(blogEntry);
 
             return blogEntry;
         }
