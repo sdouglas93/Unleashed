@@ -3,6 +3,7 @@
 <% foreach (var entry in Model)
    { %>
     <% Html.RenderPartial("BlogEntry",entry); %>
+   
 <% } %>
 
 

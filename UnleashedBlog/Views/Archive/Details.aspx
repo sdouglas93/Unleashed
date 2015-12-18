@@ -9,7 +9,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
  
 <%-- --%> <% Html.RenderPartial("BlogEntry"); %> 
-    
+ 
+ <div class ="detailsPage">  
     <div class="commentsContainer">
     <% if (Model != null)
     { %>
@@ -19,8 +20,7 @@
         <div class="commentContainer">
         <h3><%= Html.Encode( comment.Title ) %></h3>
         <div class="commentHeader">
-        Posted by <%--<%= comment.Name %>--%>
-        <%= Html.NameLink(comment) %>
+        Posted by <%= Html.NameLink(comment) %>
         on <%= comment.DatePublished.ToString("d") %>
         </div>
         <div class="commentText">
@@ -31,23 +31,19 @@
     <% } %>
     </div>
 
+
+    <div class= "comments">
     <fieldset>
-    <legend>Add Your Comment</legend>
+    <h2>Add Your Comment</h2>
     <%= Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.") %>
-    <%-- <% if (Model != null)
-    { %>--%>
+
     <% using (Html.BeginForm("Create", "Comment")) 
        { %>
-       <%--, Model.id--%>
        <%= Html.Hidden("Comment.BlogEntryId", Model.id)%>
         <p>    
-            <label for="Comment.Title">Title:</label> <%-- + Model.Title --%>
+            <label for="Comment.Title">Title:</label> 
             <br /><%= Html.TextBox("Comment.Title", "RE: " + Model.Title)%>  
         </p>
-         <%--<p>
-            <label for="Comment.BlogEntryId">BlogEntry:</label>
-            <br /><%= Html.TextBox("Comment.BlogEntryId")%>  
-        </p>--%>
         <p>
             <label for="Comment.Name">Name:</label>
             <br /><%= Html.TextBox("Comment.Name")%>  
@@ -69,7 +65,7 @@
             <input type="submit" value="Add Comment" />
         </p>
     <% } %>
-     <%-- <% } %>--%>
     </fieldset>
-  
+  </div>
+  </div> 
 </asp:Content>

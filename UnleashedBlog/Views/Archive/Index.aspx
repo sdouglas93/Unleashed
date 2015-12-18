@@ -102,6 +102,7 @@ jQuery("#jQGridDemo").jqGrid({
 </asp:Content>
 
 --%>
+
 <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<UnleashedBlog.Paging.PagedList<UnleashedBlog.Models.BlogEntry>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
