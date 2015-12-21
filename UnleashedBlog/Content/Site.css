@@ -510,3 +510,28 @@ color: #0D0D0D !important;
 {
  padding: 8px 20px;   
 }
+
+/* Styles for create page
+-----------------------------------------------------------*/
+.comments>fieldset>h2
+{
+  /* color: #fad66d;*/
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;  
+    font-size: 35px;  
+}
+
+input#Comment_Email.form-control, input#Comment_Name.form-control, 
+input#Comment_Title.form-control, input#Comment_Url.form-control,textarea#Comment_Text.form-control
+{
+   background-color: #313131;
+}
+
+textarea#Comment_Text.form-control
+{
+    width: 650px;
+}
+
+label.col-sm-2.control-label
+{
+     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;  
+}

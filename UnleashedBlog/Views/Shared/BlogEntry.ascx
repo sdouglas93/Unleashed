@@ -50,6 +50,5 @@
 <script type= "text/javascript">
     if ($(".blogLineContainer").length > 0) {
         $("#styleLine").hide();
-//        $("#C1").show();
     }
 </script>
