@@ -96,6 +96,22 @@ namespace UnleashedBlog.Models.EntityFramework
             }
         }
         private ObjectSet<CommentEntity> _CommentEntities;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<LoginEntity> LoginEntities
+        {
+            get
+            {
+                if ((_LoginEntities == null))
+                {
+                    _LoginEntities = base.CreateObjectSet<LoginEntity>("LoginEntities");
+                }
+                return _LoginEntities;
+            }
+        }
+        private ObjectSet<LoginEntity> _LoginEntities;
 
         #endregion
 
@@ -115,6 +131,14 @@ namespace UnleashedBlog.Models.EntityFramework
         public void AddToCommentEntities(CommentEntity commentEntity)
         {
             base.AddObject("CommentEntities", commentEntity);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the LoginEntities EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLoginEntities(LoginEntity loginEntity)
+        {
+            base.AddObject("LoginEntities", loginEntity);
         }
 
         #endregion
@@ -589,6 +613,174 @@ namespace UnleashedBlog.Models.EntityFramework
         private global::System.String _Text;
         partial void OnTextChanging(global::System.String value);
         partial void OnTextChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="UnleashedBlog.Models.EntityFramework", Name="LoginEntity")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class LoginEntity : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new LoginEntity object.
+        /// </summary>
+        /// <param name="userID">Initial value of the UserID property.</param>
+        /// <param name="username">Initial value of the Username property.</param>
+        /// <param name="password">Initial value of the Password property.</param>
+        /// <param name="fullname">Initial value of the Fullname property.</param>
+        public static LoginEntity CreateLoginEntity(global::System.Int32 userID, global::System.String username, global::System.String password, global::System.String fullname)
+        {
+            LoginEntity loginEntity = new LoginEntity();
+            loginEntity.UserID = userID;
+            loginEntity.Username = username;
+            loginEntity.Password = password;
+            loginEntity.Fullname = fullname;
+            return loginEntity;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 UserID
+        {
+            get
+            {
+                return _UserID;
+            }
+            set
+            {
+                if (_UserID != value)
+                {
+                    OnUserIDChanging(value);
+                    ReportPropertyChanging("UserID");
+                    _UserID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserID");
+                    OnUserIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _UserID;
+        partial void OnUserIDChanging(global::System.Int32 value);
+        partial void OnUserIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Username
+        {
+            get
+            {
+                return _Username;
+            }
+            set
+            {
+                if (_Username != value)
+                {
+                    OnUsernameChanging(value);
+                    ReportPropertyChanging("Username");
+                    _Username = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Username");
+                    OnUsernameChanged();
+                }
+            }
+        }
+        private global::System.String _Username;
+        partial void OnUsernameChanging(global::System.String value);
+        partial void OnUsernameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Password
+        {
+            get
+            {
+                return _Password;
+            }
+            set
+            {
+                if (_Password != value)
+                {
+                    OnPasswordChanging(value);
+                    ReportPropertyChanging("Password");
+                    _Password = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Password");
+                    OnPasswordChanged();
+                }
+            }
+        }
+        private global::System.String _Password;
+        partial void OnPasswordChanging(global::System.String value);
+        partial void OnPasswordChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Fullname
+        {
+            get
+            {
+                return _Fullname;
+            }
+            set
+            {
+                if (_Fullname != value)
+                {
+                    OnFullnameChanging(value);
+                    ReportPropertyChanging("Fullname");
+                    _Fullname = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Fullname");
+                    OnFullnameChanged();
+                }
+            }
+        }
+        private global::System.String _Fullname;
+        partial void OnFullnameChanging(global::System.String value);
+        partial void OnFullnameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
 
         #endregion
 

@@ -70,7 +70,7 @@
   </div>
   </div> 
 --%>
-
+<div class="space">
   <div class= "comments">
     <fieldset>
     <h2>Add Your Comment</h2>
@@ -117,11 +117,12 @@
         </div>
         </div>
 
-        <div>
-            <input type="submit" class="btn btn-warning" value="Add Comment" />
+        <div class="moveButt" >
+            <input type="submit" class="btn btn-warning newButt" value="Add Comment" />
         </div>
     <% } %>
     </fieldset>
   </div>
   </div> 
+  </div>
 </asp:Content>

@@ -518,6 +518,7 @@ color: #0D0D0D !important;
   /* color: #fad66d;*/
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;  
     font-size: 35px;  
+     padding-left: 35px !important;  
 }
 
 input#Comment_Email.form-control, input#Comment_Name.form-control, 
@@ -534,4 +535,32 @@ textarea#Comment_Text.form-control
 label.col-sm-2.control-label
 {
      font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;  
+}
+
+div.comments
+{
+    border: 1px solid !important; 
+   
+    
+    /* background-color:#262626;  */
+}
+
+div.space
+{
+
+      max-width: 900px !important;
+      padding: 250px 30px 45px 30px !important;
+      margin: -30px -30px 30px -30px !important;
+}
+
+.form-group
+{
+    padding-left: 35px !important;    
+}
+
+.btn.btn-warning.newButt
+{
+color:White !important;
+background-color: Black !important;
+background-color: #ccc;
 }
