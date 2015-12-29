@@ -6,23 +6,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UnleashedBlog.Models
 {
-    public class Login
+    public class RegisterAccount
     {
         public int UserId { get; set; }
-        
+
         [Required(ErrorMessage = "Please provide username", AllowEmptyStrings = false)]
         public string Username { get; set; }
-        
+
         [Required(ErrorMessage = "Please provide Password", AllowEmptyStrings = false)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
         [StringLength(50, MinimumLength = 8, ErrorMessage = "Password must be 8 char long.")]
         public string Password { get; set; }
 
-       
+
         //[System.Web.Mvc.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         //[DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
         //public string ConfirmPassword { get; set; }
-        
+
         [Required(ErrorMessage = "Please provide full name", AllowEmptyStrings = false)]
         public string Name { get; set; }
 

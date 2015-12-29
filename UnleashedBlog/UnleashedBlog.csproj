@@ -80,13 +80,23 @@
   <ItemGroup>
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Helpers\ArchiveLinkHelper.cs" />
     <Compile Include="Helpers\NameLinkHelper.cs" />
     <Compile Include="Models\ArchiveInfo.cs" />
     <Compile Include="Models\Binds\DecimalModelBinder.cs" />
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\RegisterAccount.cs" />
+    <Compile Include="Models\EntityFramework\RegisterInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterInfo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntityFramework\RegisterModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Contact\NewForm.ascx.cs">
       <DependentUpon>NewForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -262,6 +272,8 @@
     <Content Include="Views\Contact\Contact.aspx" />
     <Content Include="Views\Contact\Index.aspx" />
     <Content Include="Views\Contact\NewForm.ascx" />
+    <Content Include="Views\Register\Index.aspx" />
+    <Content Include="Views\Register\Register.aspx" />
     <Content Include="Views\Shared\BlogEntries.ascx" />
     <Content Include="Views\Shared\ContactForm.ascx" />
     <Content Include="Content\images\date-night.jpg" />
@@ -369,6 +381,14 @@
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="Models\EntityFramework\RegisterModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RegisterModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Models\EntityFramework\RegisterInfo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RegisterInfo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

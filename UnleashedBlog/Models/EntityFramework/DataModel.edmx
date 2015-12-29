@@ -8,15 +8,7 @@
         <EntityContainer Name="UnleashedBlogModelsEntityFrameworkStoreContainer">
           <EntitySet Name="BlogEntries" EntityType="UnleashedBlog.Models.EntityFramework.Store.BlogEntries" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Comments" EntityType="UnleashedBlog.Models.EntityFramework.Store.Comments" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Login" EntityType="UnleashedBlog.Models.EntityFramework.Store.Login" store:Type="Tables" store:Schema="dbo" store:Name="Login">
-            <DefiningQuery>SELECT 
-      [Login].[UserID] AS [UserID], 
-      [Login].[Username] AS [Username], 
-      [Login].[Password] AS [Password], 
-      [Login].[Fullname] AS [Fullname], 
-      [Login].[Email] AS [Email]
-      FROM [dbo].[Login] AS [Login]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="RegisterData" EntityType="UnleashedBlog.Models.EntityFramework.Store.RegisterData" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="BlogEntries">
           <Key>
@@ -47,17 +39,14 @@
         <!--Errors Found During Generation:
       warning 6002: The table/view 'C:\USERS\H153813\DOCUMENTS\GITHUB\UNLEASHED\UNLEASHEDBLOG\APP_DATA\BLOGDB.MDF.dbo.Login' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
-        <EntityType Name="Login">
+        <EntityType Name="RegisterData">
           <Key>
-            <PropertyRef Name="UserID" />
-            <PropertyRef Name="Username" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="Fullname" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserID" Type="int" Nullable="false" />
-          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="Fullname" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="Email" Type="varchar" MaxLength="128" />
         </EntityType>
       </Schema></edmx:StorageModels>
@@ -67,7 +56,7 @@
         <EntityContainer Name="BlogDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BlogEntryEntities" EntityType="UnleashedBlog.Models.EntityFramework.BlogEntryEntity" />
           <EntitySet Name="CommentEntities" EntityType="UnleashedBlog.Models.EntityFramework.CommentEntity" />
-          <EntitySet Name="LoginEntities" EntityType="UnleashedBlog.Models.EntityFramework.LoginEntity" />
+          <EntitySet Name="RegisterDataEntities1" EntityType="UnleashedBlog.Models.EntityFramework.RegisterDataEntities" />
         </EntityContainer>
         <EntityType Name="BlogEntryEntity">
           <Key>
@@ -95,17 +84,14 @@
           <Property Type="DateTime" Name="DatePublished" Nullable="false" />
           <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="LoginEntity">
+        <EntityType Name="RegisterDataEntities">
           <Key>
-            <PropertyRef Name="UserID" />
-            <PropertyRef Name="Username" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="Fullname" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Type="Int32" Name="UserID" Nullable="false" />
-          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Fullname" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Email" MaxLength="128" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
@@ -142,14 +128,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LoginEntities">
-            <EntityTypeMapping TypeName="UnleashedBlog.Models.EntityFramework.LoginEntity">
-              <MappingFragment StoreEntitySet="Login">
+          <EntitySetMapping Name="RegisterDataEntities1">
+            <EntityTypeMapping TypeName="UnleashedBlog.Models.EntityFramework.RegisterDataEntities">
+              <MappingFragment StoreEntitySet="RegisterData">
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -176,7 +162,7 @@
       <Diagram Name="DataModel">
         <EntityTypeShape EntityType="UnleashedBlog.Models.EntityFramework.BlogEntryEntity" Width="1.5" PointX="0.5" PointY="0.5" Height="0.4" IsExpanded="false" />
         <EntityTypeShape EntityType="UnleashedBlog.Models.EntityFramework.CommentEntity" Width="1.5" PointX="2.375" PointY="0.5" Height="0.4" IsExpanded="false" />
-        <EntityTypeShape EntityType="UnleashedBlog.Models.EntityFramework.LoginEntity" Width="1.5" PointX="4.25" PointY="0.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="UnleashedBlog.Models.EntityFramework.RegisterDataEntities" Width="1.5" PointX="0.75" PointY="1.75" Height="0.4" IsExpanded="false" />
       </Diagram>
     </Diagrams>
   </Designer>

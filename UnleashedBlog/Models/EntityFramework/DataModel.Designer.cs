@@ -100,18 +100,18 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<LoginEntity> LoginEntities
+        public ObjectSet<RegisterDataEntities> RegisterDataEntities1
         {
             get
             {
-                if ((_LoginEntities == null))
+                if ((_RegisterDataEntities1 == null))
                 {
-                    _LoginEntities = base.CreateObjectSet<LoginEntity>("LoginEntities");
+                    _RegisterDataEntities1 = base.CreateObjectSet<RegisterDataEntities>("RegisterDataEntities1");
                 }
-                return _LoginEntities;
+                return _RegisterDataEntities1;
             }
         }
-        private ObjectSet<LoginEntity> _LoginEntities;
+        private ObjectSet<RegisterDataEntities> _RegisterDataEntities1;
 
         #endregion
 
@@ -134,11 +134,11 @@ namespace UnleashedBlog.Models.EntityFramework
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the LoginEntities EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the RegisterDataEntities1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToLoginEntities(LoginEntity loginEntity)
+        public void AddToRegisterDataEntities1(RegisterDataEntities registerDataEntities)
         {
-            base.AddObject("LoginEntities", loginEntity);
+            base.AddObject("RegisterDataEntities1", registerDataEntities);
         }
 
         #endregion
@@ -622,28 +622,28 @@ namespace UnleashedBlog.Models.EntityFramework
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="UnleashedBlog.Models.EntityFramework", Name="LoginEntity")]
+    [EdmEntityTypeAttribute(NamespaceName="UnleashedBlog.Models.EntityFramework", Name="RegisterDataEntities")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class LoginEntity : EntityObject
+    public partial class RegisterDataEntities : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new LoginEntity object.
+        /// Create a new RegisterDataEntities object.
         /// </summary>
-        /// <param name="userID">Initial value of the UserID property.</param>
+        /// <param name="userId">Initial value of the UserId property.</param>
         /// <param name="username">Initial value of the Username property.</param>
         /// <param name="password">Initial value of the Password property.</param>
-        /// <param name="fullname">Initial value of the Fullname property.</param>
-        public static LoginEntity CreateLoginEntity(global::System.Int32 userID, global::System.String username, global::System.String password, global::System.String fullname)
+        /// <param name="name">Initial value of the Name property.</param>
+        public static RegisterDataEntities CreateRegisterDataEntities(global::System.Int32 userId, global::System.String username, global::System.String password, global::System.String name)
         {
-            LoginEntity loginEntity = new LoginEntity();
-            loginEntity.UserID = userID;
-            loginEntity.Username = username;
-            loginEntity.Password = password;
-            loginEntity.Fullname = fullname;
-            return loginEntity;
+            RegisterDataEntities registerDataEntities = new RegisterDataEntities();
+            registerDataEntities.UserId = userId;
+            registerDataEntities.Username = username;
+            registerDataEntities.Password = password;
+            registerDataEntities.Name = name;
+            return registerDataEntities;
         }
 
         #endregion
@@ -655,32 +655,32 @@ namespace UnleashedBlog.Models.EntityFramework
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 UserID
+        public global::System.Int32 UserId
         {
             get
             {
-                return _UserID;
+                return _UserId;
             }
             set
             {
-                if (_UserID != value)
+                if (_UserId != value)
                 {
-                    OnUserIDChanging(value);
-                    ReportPropertyChanging("UserID");
-                    _UserID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("UserID");
-                    OnUserIDChanged();
+                    OnUserIdChanging(value);
+                    ReportPropertyChanging("UserId");
+                    _UserId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserId");
+                    OnUserIdChanged();
                 }
             }
         }
-        private global::System.Int32 _UserID;
-        partial void OnUserIDChanging(global::System.Int32 value);
-        partial void OnUserIDChanged();
+        private global::System.Int32 _UserId;
+        partial void OnUserIdChanging(global::System.Int32 value);
+        partial void OnUserIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Username
         {
@@ -690,14 +690,11 @@ namespace UnleashedBlog.Models.EntityFramework
             }
             set
             {
-                if (_Username != value)
-                {
-                    OnUsernameChanging(value);
-                    ReportPropertyChanging("Username");
-                    _Username = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Username");
-                    OnUsernameChanged();
-                }
+                OnUsernameChanging(value);
+                ReportPropertyChanging("Username");
+                _Username = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Username");
+                OnUsernameChanged();
             }
         }
         private global::System.String _Username;
@@ -707,7 +704,7 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Password
         {
@@ -717,14 +714,11 @@ namespace UnleashedBlog.Models.EntityFramework
             }
             set
             {
-                if (_Password != value)
-                {
-                    OnPasswordChanging(value);
-                    ReportPropertyChanging("Password");
-                    _Password = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Password");
-                    OnPasswordChanged();
-                }
+                OnPasswordChanging(value);
+                ReportPropertyChanging("Password");
+                _Password = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Password");
+                OnPasswordChanged();
             }
         }
         private global::System.String _Password;
@@ -734,29 +728,26 @@ namespace UnleashedBlog.Models.EntityFramework
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Fullname
+        public global::System.String Name
         {
             get
             {
-                return _Fullname;
+                return _Name;
             }
             set
             {
-                if (_Fullname != value)
-                {
-                    OnFullnameChanging(value);
-                    ReportPropertyChanging("Fullname");
-                    _Fullname = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Fullname");
-                    OnFullnameChanged();
-                }
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
-        private global::System.String _Fullname;
-        partial void OnFullnameChanging(global::System.String value);
-        partial void OnFullnameChanged();
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

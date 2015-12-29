@@ -17,6 +17,13 @@ namespace UnleashedBlog
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               "Register",
+               "register/{Register}",
+                new { controller = "Register", action = "Register" }
+           );
+
+            
+            routes.MapRoute(
                "Details",
                "archive/{year}/{month}/{day}/{name}",
                 new { controller = "Archive", action = "Details" }

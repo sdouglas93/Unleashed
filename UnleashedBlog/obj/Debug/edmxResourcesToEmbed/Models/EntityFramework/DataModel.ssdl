@@ -3,15 +3,7 @@
   <EntityContainer Name="UnleashedBlogModelsEntityFrameworkStoreContainer">
     <EntitySet Name="BlogEntries" EntityType="UnleashedBlog.Models.EntityFramework.Store.BlogEntries" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Comments" EntityType="UnleashedBlog.Models.EntityFramework.Store.Comments" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Login" EntityType="UnleashedBlog.Models.EntityFramework.Store.Login" store:Type="Tables" store:Schema="dbo" store:Name="Login">
-      <DefiningQuery>SELECT 
-      [Login].[UserID] AS [UserID], 
-      [Login].[Username] AS [Username], 
-      [Login].[Password] AS [Password], 
-      [Login].[Fullname] AS [Fullname], 
-      [Login].[Email] AS [Email]
-      FROM [dbo].[Login] AS [Login]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="RegisterData" EntityType="UnleashedBlog.Models.EntityFramework.Store.RegisterData" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="BlogEntries">
     <Key>
@@ -42,17 +34,14 @@
   <!--Errors Found During Generation:
       warning 6002: The table/view 'C:\USERS\H153813\DOCUMENTS\GITHUB\UNLEASHED\UNLEASHEDBLOG\APP_DATA\BLOGDB.MDF.dbo.Login' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
-  <EntityType Name="Login">
+  <EntityType Name="RegisterData">
     <Key>
-      <PropertyRef Name="UserID" />
-      <PropertyRef Name="Username" />
-      <PropertyRef Name="Password" />
-      <PropertyRef Name="Fullname" />
+      <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserID" Type="int" Nullable="false" />
-    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="Fullname" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="Email" Type="varchar" MaxLength="128" />
   </EntityType>
 </Schema>

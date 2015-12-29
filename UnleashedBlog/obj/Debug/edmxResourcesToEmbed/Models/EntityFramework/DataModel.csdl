@@ -3,7 +3,7 @@
   <EntityContainer Name="BlogDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BlogEntryEntities" EntityType="UnleashedBlog.Models.EntityFramework.BlogEntryEntity" />
     <EntitySet Name="CommentEntities" EntityType="UnleashedBlog.Models.EntityFramework.CommentEntity" />
-    <EntitySet Name="LoginEntities" EntityType="UnleashedBlog.Models.EntityFramework.LoginEntity" />
+    <EntitySet Name="RegisterDataEntities1" EntityType="UnleashedBlog.Models.EntityFramework.RegisterDataEntities" />
   </EntityContainer>
   <EntityType Name="BlogEntryEntity">
     <Key>
@@ -31,17 +31,14 @@
     <Property Type="DateTime" Name="DatePublished" Nullable="false" />
     <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="LoginEntity">
+  <EntityType Name="RegisterDataEntities">
     <Key>
-      <PropertyRef Name="UserID" />
-      <PropertyRef Name="Username" />
-      <PropertyRef Name="Password" />
-      <PropertyRef Name="Fullname" />
+      <PropertyRef Name="UserId" />
     </Key>
-    <Property Type="Int32" Name="UserID" Nullable="false" />
-    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Fullname" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="Email" MaxLength="128" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
