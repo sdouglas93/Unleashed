@@ -40,23 +40,14 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-       <%-- <li><%: Html.ActionLink("About", "About", "Home")%></li>--%>
+      
         <li><%: Html.ActionLink("Nouveau Blog", "Create", "Blog")%></li>
         <li><%: Html.ActionLink("Must Reads", "Index", "Blog")%></li>
-      <%--    <li><%: Html.ActionLink("Comments", "Index", "Contact")%></li>--%>
-       <%--  <li><%: Html.ActionLink("Details", "Details","Archive")%></li>--%>
         <li><%: Html.ActionLink("Contact Moi", "Contact","Contact")%></li>
-         
-       <%-- <li><a href="#">Must Reads</a></li>
-        <li><a href="#">Comments</a></li> --%> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="<%:Url.Action("Index", "Register") %>">
-      <span class="glyphicon glyphicon-user"></span> Register</a></li>
-
-
-        <li><%: Html.ActionLink("Register", "Register", "Register")%><span class="glyphicon glyphicon-user"></span></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <%--<li><%: Html.ActionLink("Register", "Register", "Register")%> </li>--%>
+        <li><a href="/Register/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>

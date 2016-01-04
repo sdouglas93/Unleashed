@@ -94,12 +94,6 @@ namespace UnleashedBlog.Models.EntityFramework
         }
 
         #endregion
-
-
-        internal void AddToRegisterDataEntities(RegisterModel mode)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     #endregion

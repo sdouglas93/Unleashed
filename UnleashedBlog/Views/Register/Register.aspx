@@ -9,32 +9,32 @@
     <h2>Register</h2>
 
     <% using (Html.BeginForm()) {%>
+
+    <%: Html.AntiForgeryToken() %>
         <%: Html.ValidationSummary(true) %>
 
         <fieldset>
-            <legend>Fields</legend>
-            
-            <div class="editor-label">
+           <%-- <div class="editor-label">
                 <%: Html.LabelFor(model => model.UserId) %>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.UserId) %>
                 <%: Html.ValidationMessageFor(model => model.UserId) %>
-            </div>
+            </div>--%>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.Username) %>
+                <%: Html.LabelFor(model => model.UserName) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Username) %>
-                <%: Html.ValidationMessageFor(model => model.Username) %>
+                <%: Html.TextBoxFor(model => model.UserName) %>
+                <%: Html.ValidationMessageFor(model => model.UserName) %>
             </div>
             
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Password) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Password) %>
+                <%: Html.PasswordFor(model => model.Password, new { style = "width: 350px !important" })%>
                 <%: Html.ValidationMessageFor(model => model.Password) %>
             </div>
             

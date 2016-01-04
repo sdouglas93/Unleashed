@@ -11,7 +11,7 @@ namespace UnleashedBlog.Models
         public int UserId { get; set; }
 
         [Required(ErrorMessage = "Please provide username", AllowEmptyStrings = false)]
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         [Required(ErrorMessage = "Please provide Password", AllowEmptyStrings = false)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
@@ -20,8 +20,9 @@ namespace UnleashedBlog.Models
 
 
         //[System.Web.Mvc.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        //[DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
-        //public string ConfirmPassword { get; set; }
+        // [Compare("Password")]
+         //[DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
+         //public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Please provide full name", AllowEmptyStrings = false)]
         public string Name { get; set; }
@@ -30,4 +31,5 @@ namespace UnleashedBlog.Models
         ErrorMessage = "Please provide valid email id")]
         public string Email { get; set; }
     }
+
 }
