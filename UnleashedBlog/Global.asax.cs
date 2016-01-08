@@ -22,7 +22,18 @@ namespace UnleashedBlog
                 new { controller = "Register", action = "Register" }
            );
 
-            
+            /*routes.MapRoute(
+               "Login",
+               "Login/{Login}",
+                new { controller = "Login", action = "Login" }
+           );
+
+            routes.MapRoute(
+              "Success",
+              "Success/{Login}",
+               new { controller = "Login", action = "Success" }
+          );*/
+
             routes.MapRoute(
                "Details",
                "archive/{year}/{month}/{day}/{name}",

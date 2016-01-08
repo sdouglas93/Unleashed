@@ -44,11 +44,12 @@
         <li><%: Html.ActionLink("Nouveau Blog", "Create", "Blog")%></li>
         <li><%: Html.ActionLink("Must Reads", "Index", "Blog")%></li>
         <li><%: Html.ActionLink("Contact Moi", "Contact","Contact")%></li>
+        <li><%: Html.ActionLink("Success", "Success","Login")%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <%--<li><%: Html.ActionLink("Register", "Register", "Register")%> </li>--%>
         <li><a href="/Register/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/Login/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>

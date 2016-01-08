@@ -50,6 +50,8 @@ namespace UnleashedBlog.Controllers
                    };
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterAccount mode)
         {
             var entity = ConvertRegisterAccountToRegisterDataEntity(mode);
